@@ -1,0 +1,10 @@
+[gd_resource type="Theme" format=3 uid="uid://b5r8k26bk5q43"]
+
+[ext_resource type="FontFile" uid="uid://clx5na305u8nn" path="res://themes/font/cinzel.bold.otf" id="1_a1axm"]
+
+[resource]
+default_font = ExtResource("1_a1axm")
+TextEdit/colors/background_color = Color(0, 0, 0, 0)
+TextEdit/colors/font_color = Color(1, 1, 1, 1)
+TextEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+TextEdit/constants/outline_size = 0

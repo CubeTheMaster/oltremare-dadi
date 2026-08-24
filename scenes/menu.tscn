@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://c0uvgi5rk3egr"]
+
+[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/banner/Mavromonte_simmetrico.png" id="1_con2f"]
+[ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="2_g3eks"]
+[ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="2_mhnvy"]
+[ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="3_4ytvr"]
+[ext_resource type="Script" uid="uid://b4avk8674opj" path="res://scripts/pulsanti/pulsante_master.gd" id="4_mhnvy"]
+[ext_resource type="Script" uid="uid://88cpbjlqpl6q" path="res://scripts/pulsanti/pulsante_giocatore.gd" id="5_4ytvr"]
+
+[node name="Menu" type="Control" unique_id=67856467]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sfondo" type="TextureRect" parent="." unique_id=1289045469]
+custom_minimum_size = Vector2(720, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_con2f")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Titolo" type="Label" parent="." unique_id=1877563171]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.0
+offset_top = 50.0
+offset_right = 247.0
+offset_bottom = 110.0
+grow_horizontal = 2
+theme = ExtResource("2_g3eks")
+theme_override_colors/font_color = Color(0.25882354, 0.06666667, 0.79607844, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "Mavromonte Dadi"
+horizontal_alignment = 1
+
+[node name="Sottotitolo" type="Label" parent="." unique_id=1322189190]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -247.0
+offset_top = 100.0
+offset_right = 247.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme = ExtResource("2_g3eks")
+theme_override_colors/font_color = Color(0.22352941, 0.72156864, 0.7254902, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 3
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 50
+text = "Oltremare"
+horizontal_alignment = 1
+
+[node name="Pulsanti" type="VBoxContainer" parent="." unique_id=205731245]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -93.0
+offset_top = -86.0
+offset_right = 93.0
+offset_bottom = 86.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_mhnvy")
+
+[node name="Master" type="Button" parent="Pulsanti" unique_id=1276106938]
+layout_mode = 2
+theme = ExtResource("3_4ytvr")
+text = "Master"
+script = ExtResource("4_mhnvy")
+
+[node name="Giocatore" type="Button" parent="Pulsanti" unique_id=1536514653]
+layout_mode = 2
+theme = ExtResource("3_4ytvr")
+text = "Giocatore"
+script = ExtResource("5_4ytvr")
+
+[connection signal="mouse_entered" from="Pulsanti/Master" to="Pulsanti/Master" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Pulsanti/Master" to="Pulsanti/Master" method="_on_mouse_exited"]
+[connection signal="pressed" from="Pulsanti/Master" to="Pulsanti/Master" method="_on_pressed"]
+[connection signal="mouse_entered" from="Pulsanti/Giocatore" to="Pulsanti/Giocatore" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Pulsanti/Giocatore" to="Pulsanti/Giocatore" method="_on_mouse_exited"]
+[connection signal="pressed" from="Pulsanti/Giocatore" to="Pulsanti/Giocatore" method="_on_pressed"]

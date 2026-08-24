@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=3 uid="uid://cir72hsfu4bhs"]
+
+[resource]
+Button/fonts/font = null
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 10

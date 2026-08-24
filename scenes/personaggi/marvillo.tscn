@@ -1,0 +1,222 @@
+[gd_scene format=3 uid="uid://dmwnbckadwxxo"]
+
+[ext_resource type="Script" uid="uid://cx5gu8msl26ty" path="res://scripts/personaggi/scena_marvillo.gd" id="1_h3pqf"]
+[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/banner/Mavromonte_simmetrico.png" id="2_t2jch"]
+[ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="3_xdgvd"]
+[ext_resource type="Script" uid="uid://36ai45jnht0i" path="res://scripts/pulsanti/pulsante_generico.gd" id="4_3tyqq"]
+[ext_resource type="Theme" uid="uid://b5e3tqmf6am4t" path="res://themes/temi/tema_pannelli.tres" id="5_kgxt3"]
+[ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="6_1ou6m"]
+[ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="7_qtwy1"]
+[ext_resource type="FontFile" uid="uid://clx5na305u8nn" path="res://themes/font/cinzel.bold.otf" id="8_pgauc"]
+
+[node name="marvillo" type="Control" unique_id=493726186]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h3pqf")
+
+[node name="Sfondo" type="TextureRect" parent="." unique_id=1055178431]
+custom_minimum_size = Vector2(720, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_t2jch")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indietro" type="Button" parent="." unique_id=1146827514]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 34.0
+offset_bottom = 40.0
+theme = ExtResource("3_xdgvd")
+theme_override_font_sizes/font_size = 30
+text = "←"
+script = ExtResource("4_3tyqq")
+
+[node name="Finestra" type="PanelContainer" parent="." unique_id=969341417]
+custom_minimum_size = Vector2(400, 435)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_kgxt3")
+
+[node name="Griglia Verticale" type="VBoxContainer" parent="Finestra" unique_id=1389819681]
+layout_mode = 2
+theme = ExtResource("6_1ou6m")
+theme_override_constants/separation = 5
+
+[node name="Nome" type="Label" parent="Finestra/Griglia Verticale" unique_id=490263824]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("7_qtwy1")
+theme_override_colors/font_color = Color(0.00784314, 0.188235, 0.368627, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = " Marvillo"
+
+[node name="Linea" type="HSeparator" parent="Finestra/Griglia Verticale" unique_id=1975701042]
+custom_minimum_size = Vector2(385, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Azioni" type="Label" parent="Finestra/Griglia Verticale" unique_id=2013858500]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("7_qtwy1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "azioni"
+
+[node name="Griglia Azioni V" type="VBoxContainer" parent="Finestra/Griglia Verticale" unique_id=1482293418]
+layout_mode = 2
+theme = ExtResource("6_1ou6m")
+theme_override_constants/separation = 15
+
+[node name="Griglia Azioni H1" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=383502199]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_1ou6m")
+theme_override_constants/separation = 10
+
+[node name="Stocco" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=725274204]
+layout_mode = 2
+theme = ExtResource("3_xdgvd")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "stocco"
+script = ExtResource("4_3tyqq")
+
+[node name="Difesa" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=1461144562]
+layout_mode = 2
+theme = ExtResource("3_xdgvd")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "difesa"
+script = ExtResource("4_3tyqq")
+
+[node name="Macarena" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=958466258]
+layout_mode = 2
+theme = ExtResource("3_xdgvd")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "macarena"
+script = ExtResource("4_3tyqq")
+
+[node name="Griglia Azioni H2" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=1756284433]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_1ou6m")
+theme_override_constants/separation = 20
+
+[node name="Assalto Piceno" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2" unique_id=462050987]
+layout_mode = 2
+theme = ExtResource("3_xdgvd")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "assalto piceno"
+script = ExtResource("4_3tyqq")
+
+[node name="Opzioni" type="Label" parent="Finestra/Griglia Verticale" unique_id=1270137240]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("7_qtwy1")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "opzioni"
+
+[node name="Griglia Opzioni" type="GridContainer" parent="Finestra/Griglia Verticale" unique_id=1757721774]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_1ou6m")
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 5
+columns = 2
+
+[node name="Pugnale" type="CheckBox" parent="Finestra/Griglia Verticale/Griglia Opzioni" unique_id=1485165095]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "equipaggia/disequipaggia il pugnale da parata
+
+aggiunge 1 dado DIF alla difesa e 1 dado ATT allo stocco"
+theme = ExtResource("7_qtwy1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+button_pressed = true
+text = "pugnale"
+
+[node name="Griglia M AM" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Opzioni" unique_id=802839886]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_1ou6m")
+theme_override_constants/separation = 10
+
+[node name="M AM" type="Label" parent="Finestra/Griglia Verticale/Griglia Opzioni/Griglia M AM" unique_id=1742639204]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+tooltip_text = "Modificatore Attacchi da Mischia"
+mouse_filter = 0
+theme = ExtResource("7_qtwy1")
+theme_override_font_sizes/font_size = 20
+text = "M. AM"
+
+[node name="Valore_M" type="SpinBox" parent="Finestra/Griglia Verticale/Griglia Opzioni/Griglia M AM" unique_id=1934693674]
+unique_name_in_owner = true
+layout_mode = 2
+value = 5.0
+rounded = true
+alignment = 1
+
+[node name="Difesa Bacco" type="CheckBox" parent="Finestra/Griglia Verticale/Griglia Opzioni" unique_id=1322070377]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("7_qtwy1")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "difesa bacco"
+
+[node name="Testo" type="TextEdit" parent="Finestra/Griglia Verticale" unique_id=159110239]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/background_color = Color(0.10748, 0.10748, 0.10748, 1)
+theme_override_fonts/font = ExtResource("8_pgauc")
+editable = false
+
+[connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
+[connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Stocco" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Stocco" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Stocco" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Stocco" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Stocco" to="." method="_on_stocco_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" to="." method="_on_difesa_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Macarena" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Macarena" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Macarena" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Macarena" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Macarena" to="." method="_on_macarena_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Assalto Piceno" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Assalto Piceno" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Assalto Piceno" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Assalto Piceno" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Assalto Piceno" to="." method="_on_assalto_piceno_pressed"]
+[connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni/Pugnale" to="." method="_on_pugnale_toggled"]
+[connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni/Difesa Bacco" to="." method="_on_difesa_bacco_toggled"]

@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://byogmixhaabsx"]
+
+[ext_resource type="Script" uid="uid://ej44rgiryebb" path="res://scripts/scena_tiri.gd" id="1_wyj2j"]
+[ext_resource type="Theme" uid="uid://b5e3tqmf6am4t" path="res://themes/temi/tema_pannelli.tres" id="1_y2pn4"]
+[ext_resource type="FontFile" uid="uid://clx5na305u8nn" path="res://themes/font/cinzel.bold.otf" id="3_jny6a"]
+[ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="4_ercrd"]
+[ext_resource type="Script" uid="uid://36ai45jnht0i" path="res://scripts/pulsanti/pulsante_generico.gd" id="5_viotc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ercrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_viotc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_di02k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5sya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7hc1"]
+
+[node name="tiri" type="Control" unique_id=1734117664]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wyj2j")
+
+[node name="Contenitore" type="PanelContainer" parent="." unique_id=1974878110]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_y2pn4")
+
+[node name="Testo" type="TextEdit" parent="Contenitore" unique_id=872344483]
+layout_mode = 2
+theme_override_colors/background_color = Color(0.10748, 0.10748, 0.10748, 1)
+theme_override_fonts/font = ExtResource("3_jny6a")
+editable = false
+
+[node name="X" type="Button" parent="Contenitore" unique_id=1052508974]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("4_ercrd")
+theme_override_colors/font_color = Color(0.767025, 2.52686e-06, 9.62615e-07, 1)
+theme_override_colors/font_hover_color = Color(0.768627, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 15
+text = " x "
+script = ExtResource("5_viotc")
+
+[node name="Indietro" type="Button" parent="." unique_id=566460576]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 34.0
+offset_bottom = 40.0
+theme = ExtResource("4_ercrd")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ercrd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_viotc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_di02k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p5sya")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w7hc1")
+text = "←"
+script = ExtResource("5_viotc")
+
+[connection signal="mouse_entered" from="Contenitore/X" to="Contenitore/X" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Contenitore/X" to="Contenitore/X" method="_on_mouse_exited"]
+[connection signal="pressed" from="Contenitore/X" to="." method="_on_x_pressed"]
+[connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
+[connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]

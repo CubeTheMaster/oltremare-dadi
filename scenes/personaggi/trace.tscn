@@ -1,0 +1,282 @@
+[gd_scene format=3 uid="uid://c06e2w2hxma5s"]
+
+[ext_resource type="Script" uid="uid://c5rbgw7bcvyvu" path="res://scripts/personaggi/scena_trace.gd" id="1_qhjb8"]
+[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/banner/Mavromonte_simmetrico.png" id="2_oafyg"]
+[ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="3_urvtk"]
+[ext_resource type="Script" uid="uid://36ai45jnht0i" path="res://scripts/pulsanti/pulsante_generico.gd" id="4_e5ryi"]
+[ext_resource type="Theme" uid="uid://b5e3tqmf6am4t" path="res://themes/temi/tema_pannelli.tres" id="5_d4hs3"]
+[ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="6_mtqhf"]
+[ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="7_oliyo"]
+[ext_resource type="FontFile" uid="uid://clx5na305u8nn" path="res://themes/font/cinzel.bold.otf" id="8_ip2nt"]
+
+[node name="trace" type="Control" unique_id=1475458310]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qhjb8")
+
+[node name="Sfondo" type="TextureRect" parent="." unique_id=1835580775]
+custom_minimum_size = Vector2(720, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oafyg")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indietro" type="Button" parent="." unique_id=1823833619]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 34.0
+offset_bottom = 40.0
+theme = ExtResource("3_urvtk")
+theme_override_font_sizes/font_size = 30
+text = "←"
+script = ExtResource("4_e5ryi")
+
+[node name="Finestra" type="PanelContainer" parent="." unique_id=1333234065]
+custom_minimum_size = Vector2(460, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_d4hs3")
+
+[node name="Griglia Verticale" type="VBoxContainer" parent="Finestra" unique_id=975552159]
+layout_mode = 2
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 5
+
+[node name="Nome" type="Label" parent="Finestra/Griglia Verticale" unique_id=167035222]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("7_oliyo")
+theme_override_colors/font_color = Color(0, 0.905882, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = " Tracedino"
+
+[node name="Linea" type="HSeparator" parent="Finestra/Griglia Verticale" unique_id=112838734]
+custom_minimum_size = Vector2(385, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Azioni" type="Label" parent="Finestra/Griglia Verticale" unique_id=1685042857]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("7_oliyo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "azioni"
+
+[node name="Griglia Azioni V" type="VBoxContainer" parent="Finestra/Griglia Verticale" unique_id=1769375867]
+layout_mode = 2
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 15
+
+[node name="Griglia Azioni H1" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=1920045013]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 15
+
+[node name="Spada" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=1240295722]
+layout_mode = 2
+theme = ExtResource("3_urvtk")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "spada"
+script = ExtResource("4_e5ryi")
+
+[node name="Difesa" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=2612840]
+layout_mode = 2
+theme = ExtResource("3_urvtk")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "difesa"
+script = ExtResource("4_e5ryi")
+
+[node name="Spadone Arcano" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=2018981949]
+layout_mode = 2
+theme = ExtResource("3_urvtk")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "spadone arcano"
+script = ExtResource("4_e5ryi")
+
+[node name="Griglia Azioni H2" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=1432244625]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 20
+
+[node name="Zolfo" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2" unique_id=1344773540]
+layout_mode = 2
+theme = ExtResource("3_urvtk")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "devastazione di zolfo"
+script = ExtResource("4_e5ryi")
+
+[node name="Griglia Azioni H3" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=496912577]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 20
+
+[node name="Sale" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3" unique_id=912864783]
+layout_mode = 2
+theme = ExtResource("3_urvtk")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "prigione di sale"
+script = ExtResource("4_e5ryi")
+
+[node name="Griglia Azioni H4" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=1695243921]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 20
+
+[node name="Mercurio" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4" unique_id=609313654]
+layout_mode = 2
+theme = ExtResource("3_urvtk")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "salvezza di mercurio"
+script = ExtResource("4_e5ryi")
+
+[node name="Opzioni" type="Label" parent="Finestra/Griglia Verticale" unique_id=44010166]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("7_oliyo")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "opzioni"
+
+[node name="Griglia Opzioni V" type="VBoxContainer" parent="Finestra/Griglia Verticale" unique_id=875407506]
+layout_mode = 2
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 15
+
+[node name="Griglia Opzioni H1" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Opzioni V" unique_id=559215037]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 30
+
+[node name="Griglia M AM" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1" unique_id=687892993]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 10
+
+[node name="M AM" type="Label" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1/Griglia M AM" unique_id=1537992182]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+tooltip_text = "Modificatore Attacchi da Mischia"
+mouse_filter = 0
+theme = ExtResource("7_oliyo")
+theme_override_font_sizes/font_size = 20
+text = "M. AM"
+
+[node name="Valore_M" type="SpinBox" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1/Griglia M AM" unique_id=1371629880]
+unique_name_in_owner = true
+layout_mode = 2
+value = 4.0
+rounded = true
+alignment = 1
+
+[node name="Incanalare" type="CheckBox" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1" unique_id=552027679]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "attiva/disattiva incanalare"
+theme = ExtResource("7_oliyo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "incanalare"
+
+[node name="Griglia Opzioni H2" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Opzioni V" unique_id=1498631904]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_mtqhf")
+theme_override_constants/separation = 0
+
+[node name="Scudo" type="Label" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2" unique_id=1594270169]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+tooltip_text = "equipaggia lo scudo/impugna la spada a due mani"
+mouse_filter = 0
+theme = ExtResource("7_oliyo")
+theme_override_font_sizes/font_size = 20
+text = "SCUDO"
+
+[node name="Selettore" type="CheckButton" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2" unique_id=337922746]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "equipaggia lo scudo/impugna la spada a due mani"
+theme = ExtResource("7_oliyo")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+
+[node name="Due Mani" type="Label" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2" unique_id=1384469713]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+tooltip_text = "equipaggia lo scudo/impugna la spada a due mani"
+mouse_filter = 0
+theme = ExtResource("7_oliyo")
+theme_override_font_sizes/font_size = 20
+text = "DUE MANI"
+
+[node name="Testo" type="TextEdit" parent="Finestra/Griglia Verticale" unique_id=1487553216]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/background_color = Color(0.10748, 0.10748, 0.10748, 1)
+theme_override_fonts/font = ExtResource("8_ip2nt")
+editable = false
+
+[connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
+[connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spada" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spada" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spada" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spada" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spada" to="." method="_on_spada_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Difesa" to="." method="_on_difesa_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spadone Arcano" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spadone Arcano" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spadone Arcano" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spadone Arcano" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Spadone Arcano" to="." method="_on_spadone_arcano_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Zolfo" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Zolfo" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Zolfo" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Zolfo" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Zolfo" to="." method="_on_zolfo_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Sale" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Sale" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Sale" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Sale" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Sale" to="." method="_on_sale_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Mercurio" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Mercurio" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Mercurio" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Mercurio" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Mercurio" to="." method="_on_mercurio_pressed"]
+[connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1/Incanalare" to="." method="_on_incanalare_toggled"]
+[connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2/Selettore" to="." method="_on_selettore_toggled"]

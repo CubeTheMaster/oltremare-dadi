@@ -1,0 +1,7 @@
+[gd_resource type="Theme" format=3 uid="uid://d2bwcbyldukri"]
+
+[resource]
+GridContainer/constants/h_separation = 50
+GridContainer/constants/v_separation = 50
+HBoxContainer/constants/separation = 50
+VBoxContainer/constants/separation = 50

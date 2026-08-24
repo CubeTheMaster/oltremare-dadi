@@ -1,0 +1,242 @@
+[gd_scene format=3 uid="uid://cslhtbxwad03l"]
+
+[ext_resource type="Script" uid="uid://jdem7tuqv0yi" path="res://scripts/personaggi/scena_carmine.gd" id="1_4hxsn"]
+[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/banner/Mavromonte_simmetrico.png" id="2_8340e"]
+[ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="3_wbude"]
+[ext_resource type="Script" uid="uid://36ai45jnht0i" path="res://scripts/pulsanti/pulsante_generico.gd" id="4_a3nrk"]
+[ext_resource type="Theme" uid="uid://b5e3tqmf6am4t" path="res://themes/temi/tema_pannelli.tres" id="5_wbude"]
+[ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="6_a3nrk"]
+[ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="6_vwp2i"]
+[ext_resource type="FontFile" uid="uid://clx5na305u8nn" path="res://themes/font/cinzel.bold.otf" id="8_vwp2i"]
+
+[node name="carmine" type="Control" unique_id=1347544813]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4hxsn")
+
+[node name="Sfondo" type="TextureRect" parent="." unique_id=800230031]
+custom_minimum_size = Vector2(720, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_8340e")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Indietro" type="Button" parent="." unique_id=134671924]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 34.0
+offset_bottom = 40.0
+theme = ExtResource("3_wbude")
+theme_override_font_sizes/font_size = 30
+text = "←"
+script = ExtResource("4_a3nrk")
+
+[node name="Finestra" type="PanelContainer" parent="." unique_id=769233134]
+custom_minimum_size = Vector2(400, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_wbude")
+
+[node name="Griglia Verticale" type="VBoxContainer" parent="Finestra" unique_id=1929504058]
+layout_mode = 2
+theme = ExtResource("6_vwp2i")
+theme_override_constants/separation = 5
+
+[node name="Nome" type="Label" parent="Finestra/Griglia Verticale" unique_id=1391121766]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("6_a3nrk")
+theme_override_colors/font_color = Color(0.541722, 0.690847, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = " Carmine"
+
+[node name="Linea" type="HSeparator" parent="Finestra/Griglia Verticale" unique_id=600191170]
+custom_minimum_size = Vector2(385, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Azioni" type="Label" parent="Finestra/Griglia Verticale" unique_id=2066075546]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("6_a3nrk")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "azioni"
+
+[node name="Griglia Azioni V" type="VBoxContainer" parent="Finestra/Griglia Verticale" unique_id=1295176118]
+layout_mode = 2
+theme = ExtResource("6_vwp2i")
+theme_override_constants/separation = 15
+
+[node name="Griglia Azioni H1" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=1695210299]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_vwp2i")
+theme_override_constants/separation = 10
+
+[node name="Pistola" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=978324041]
+layout_mode = 2
+theme = ExtResource("3_wbude")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "pistola"
+script = ExtResource("4_a3nrk")
+
+[node name="Raffica" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=1633380128]
+layout_mode = 2
+theme = ExtResource("3_wbude")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "raffica"
+script = ExtResource("4_a3nrk")
+
+[node name="Balestra" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1" unique_id=192369697]
+layout_mode = 2
+theme = ExtResource("3_wbude")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "balestra"
+script = ExtResource("4_a3nrk")
+
+[node name="Griglia Azioni H2" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=162128707]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_vwp2i")
+theme_override_constants/separation = 20
+
+[node name="Doppia Pistola" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2" unique_id=1985871244]
+layout_mode = 2
+theme = ExtResource("3_wbude")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "pistola  x2"
+script = ExtResource("4_a3nrk")
+
+[node name="Doppia Raffica" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2" unique_id=1389298118]
+layout_mode = 2
+theme = ExtResource("3_wbude")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "raffica  x2"
+script = ExtResource("4_a3nrk")
+
+[node name="Griglia Azioni H3" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Azioni V" unique_id=1285969232]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_vwp2i")
+theme_override_constants/separation = 20
+
+[node name="Dinamite" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3" unique_id=220387536]
+layout_mode = 2
+theme = ExtResource("3_wbude")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "dinamite"
+script = ExtResource("4_a3nrk")
+
+[node name="Calcio" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3" unique_id=1420707648]
+layout_mode = 2
+theme = ExtResource("3_wbude")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "calcio"
+script = ExtResource("4_a3nrk")
+
+[node name="Difesa" type="Button" parent="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3" unique_id=1647732324]
+layout_mode = 2
+theme = ExtResource("3_wbude")
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = "difesa"
+script = ExtResource("4_a3nrk")
+
+[node name="Opzioni" type="Label" parent="Finestra/Griglia Verticale" unique_id=683133593]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("6_a3nrk")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "opzioni"
+
+[node name="Griglia M AF" type="HBoxContainer" parent="Finestra/Griglia Verticale" unique_id=760309112]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_vwp2i")
+theme_override_constants/separation = 10
+
+[node name="M AF" type="Label" parent="Finestra/Griglia Verticale/Griglia M AF" unique_id=1477130905]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+tooltip_text = "Modificatore attacchi Arma da Fuoco"
+mouse_filter = 0
+theme = ExtResource("6_a3nrk")
+theme_override_font_sizes/font_size = 20
+text = "M. AF"
+
+[node name="Valore_F" type="SpinBox" parent="Finestra/Griglia Verticale/Griglia M AF" unique_id=1101039089]
+unique_name_in_owner = true
+layout_mode = 2
+value = 7.0
+rounded = true
+alignment = 1
+
+[node name="Testo" type="TextEdit" parent="Finestra/Griglia Verticale" unique_id=906164734]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/background_color = Color(0.10748, 0.10748, 0.10748, 1)
+theme_override_fonts/font = ExtResource("8_vwp2i")
+editable = false
+
+[connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
+[connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Pistola" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Pistola" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Pistola" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Pistola" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Pistola" to="." method="_on_pistola_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Raffica" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Raffica" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Raffica" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Raffica" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Raffica" to="." method="_on_raffica_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Balestra" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Balestra" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Balestra" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Balestra" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H1/Balestra" to="." method="_on_balestra_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Pistola" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Pistola" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Pistola" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Pistola" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Pistola" to="." method="_on_doppia_pistola_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Raffica" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Raffica" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Raffica" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Raffica" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Doppia Raffica" to="." method="_on_doppia_raffica_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Dinamite" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Dinamite" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Dinamite" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Dinamite" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Dinamite" to="." method="_on_dinamite_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Calcio" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Calcio" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Calcio" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Calcio" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Calcio" to="." method="_on_calcio_pressed"]
+[connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" method="_on_mouse_exited"]
+[connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" to="." method="_on_difesa_pressed"]

@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://cobum0ciwvcn5"]
+
+[ext_resource type="FontFile" uid="uid://b4fre7k716g3y" path="res://themes/font/cinzel.regular.otf" id="1_b6kno"]
+
+[resource]
+default_font = ExtResource("1_b6kno")
+default_font_size = 40
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/constants/outline_size = 10
+Button/icons/icon = null
