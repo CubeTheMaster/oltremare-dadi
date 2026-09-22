@@ -15,27 +15,36 @@ const DIFESA_PIU1      = {1 : 1,  2 : 1,  3 : 2,  4 : 2,  5 : 2,  6 : 3,  "nome"
 const SCHIVATA         = {1 : 0,  2 : 0,  3 : 0,  4 : 1,  5 : 1,  6 : INF,"nome" : "Schivata"      }
 
 # Difese standard
-const N_LEGGERA: Dictionary = {"DIF": 1, "SCH": 1  }
-const N_MEDIA:   Dictionary = {"DIF": 2, "DIF+1": 1}
-const N_PESANTE: Dictionary = {"DIF": 1, "DIF+1": 4}
+const N_LEGGERA : Dictionary = {"DIF": 1, "SCH": 1  }
+const N_MEDIA   : Dictionary = {"DIF": 2, "DIF+1": 1}
+const N_PESANTE : Dictionary = {"DIF": 1, "DIF+1": 4}
 
 # Attacchi standard
-const N_DISARMATO: Dictionary = {"ATT": 2, "ATT+1": 2}
-const N_PRESA:     Dictionary = {"ATT": 4, "ATT+1": 3}
+const N_DISARMATO : Dictionary = {"ATT": 2, "ATT+1": 2}
+const N_PRESA     : Dictionary = {"ATT": 4, "ATT+1": 3}
 
-## OUTPUT FUNZIONE TIRI
-var risultato: Dictionary
-var danni: int
+# Scene
+const SCENA_GIOCATORE      : String = "res://scenes/schermate/giocatore.tscn"
+const SCENA_DANNI_RICEVUTI : PackedScene = preload("res://scenes/finestre/danni_ricevuti.tscn")
+
+## OUTPUT FUNZIONI 
+# Tiri
+var risultato : Dictionary
+var danni     : int
 var riduzione #: int o float
-var gittata: int
-var cura: int
+var gittata   : int
+var cura      : int
+
+# Danni subiti
+var info_danni   : Dictionary
+var danni_subiti : int
 
 ## MODIFICATORI
-@onready var m_AM: SpinBox = assegna_modificatore(%Valore_M)
-@onready var m_AF: SpinBox = assegna_modificatore(%Valore_F)
+@onready var m_AM : SpinBox = assegna_modificatore(%Valore_M)
+@onready var m_AF : SpinBox = assegna_modificatore(%Valore_F)
 
 ## CASELLA DI TESTO
-@onready var terminale: TextEdit = %Testo
+@onready var terminale : TextEdit = %Testo
 
 # ------------------------------ F U N Z I O N I ------------------------------
 ## - TIRI -
@@ -226,14 +235,16 @@ func reset() -> void:
 
 # Abilità
 ## Verifica se la schivata è riuscita
-func schivata(_riduzione, _terminale: TextEdit, newline: bool = true) -> void:
+func schivata(_riduzione, _terminale: TextEdit, newline: bool = true) -> bool:
 	if newline :
 		_terminale.text += "\n"
 	
-	if riduzione < INF :
+	if _riduzione < INF :
 		_terminale.text += "RIDUZIONE:  " + str(_riduzione)
+		return false
 	else :
 		_terminale.text += "SCHIVA!!!"
+		return true
 
 ## Verifica se la presa non è utilizzabile
 func forza_insufficiente(_m_AM: SpinBox, _terminale: TextEdit) -> bool:
@@ -243,13 +254,54 @@ func forza_insufficiente(_m_AM: SpinBox, _terminale: TextEdit) -> bool:
 	else:
 		return false
 
+## Calcola il danno subito
+func danno_subito(_info_danni: Dictionary, _riduzione: int, _terminale: TextEdit, newline: bool = true) -> int:
+	# se non ci sono info salta il calcolo
+	if _info_danni.is_empty():
+		return -1
+	
+	var _danni_ricevuti : int  = _info_danni["danni ricevuti"]
+	var _resistente     : bool = _info_danni["resistente"] 
+	var _debole         : bool = _info_danni["debole"]
+	var _antiflusso     : bool = _info_danni["???" ]
+	
+	var _neutrale     : bool   = _resistente == _debole
+	var _malus        : int    = int(_antiflusso)
+	var _danni_subiti : int    = max(_danni_ricevuti - _riduzione, 0)
+	var _testo        : String = " ("
+	
+	if _neutrale:
+		_danni_subiti *= 1 + 1*_malus
+		_testo += "neutrale" + "???".repeat(_malus) + ")"
+	elif _resistente:
+		@warning_ignore("narrowing_conversion")
+		_danni_subiti *= 0.5 + 0.25*_malus
+		_testo += "resistente" + "???".repeat(_malus) + ")"
+	elif _debole:
+		_danni_subiti *= 2 + 1*_malus
+		_testo += "debole" + "???".repeat(_malus) + ")"
+	
+	if newline :
+		_terminale.text += "\n"
+	
+	_terminale.text += "DANNI SUBITI: " + str(_danni_subiti) + _testo
+	
+	return _danni_subiti
+
 ## - INTERFACCIA -
+# Finestre
+func inserisci_danni_ricevuti() -> Dictionary:
+	var finestra_danni_ricevuti: Control = SCENA_DANNI_RICEVUTI.instantiate()
+	add_child(finestra_danni_ricevuti)
+	
+	return await finestra_danni_ricevuti.valori_inviati
+
 # Scena
 ## Torna alla selezione personaggi se premi ESC
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("indietro"):
-		get_tree().change_scene_to_file("res://scenes/giocatore.tscn")
+		get_tree().change_scene_to_file(SCENA_GIOCATORE)
 
 ## Torna alla selezione personaggi se premi la freccia indietro
 func _on_indietro_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/giocatore.tscn")
+	get_tree().change_scene_to_file(SCENA_GIOCATORE)

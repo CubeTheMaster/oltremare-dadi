@@ -3,11 +3,11 @@ extends Control # GIOCATORE
 # Torna al menu se premi ESC
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("indietro"):
-		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+		get_tree().change_scene_to_file("res://scenes/schermate/menu.tscn")
 
 # Torna al menu se premi la freccia indietro
 func _on_indietro_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/schermate/menu.tscn")
 
 # Vai alla scena di Carmine
 func _on_carmine_pressed() -> void:

@@ -95,7 +95,12 @@ func _on_difesa_pressed() -> void:
 	terminale.text += risultato["testo"]
 	
 	# verifica schivata
-	schivata(riduzione, terminale)
+	if schivata(riduzione, terminale):
+		return
+	
+	# inserisci danni ricevuti e calcola danni subiti
+	info_danni = await inserisci_danni_ricevuti()
+	danni_subiti = danno_subito(info_danni, riduzione, terminale)
 
 # - Altro -
 ## MACARENA
@@ -107,7 +112,7 @@ func _on_macarena_pressed() -> void:
 	$Finestra.add_child(nodo_macarena)
 	
 	# imposta il nodo
-	var indirizzo_macarena = "res://textures/Los Del Rio - Macarena (Bayside Boys Remix) [cut].ogv"
+	var indirizzo_macarena = "res://textures/varie/Los Del Rio - Macarena (Bayside Boys Remix) [cut].ogv"
 	$Finestra/Macarena.expand = true
 	$Finestra/Macarena.stream = load(indirizzo_macarena)
 	

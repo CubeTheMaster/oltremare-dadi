@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhdpbgjewo85t"
-path="res://.godot/imported/Finale.png-7cb89265fb1780dd7475da11c1e335a8.ctex"
+uid="uid://1mvewh6546xo"
+path="res://.godot/imported/Rosario 2.png-44bdb97ad8f2cbaa0c7e258ed22673e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/banner/Finale.png"
-dest_files=["res://.godot/imported/Finale.png-7cb89265fb1780dd7475da11c1e335a8.ctex"]
+source_file="res://textures/personaggi/Rosario 2.png"
+dest_files=["res://.godot/imported/Rosario 2.png-44bdb97ad8f2cbaa0c7e258ed22673e7.ctex"]
 
 [params]
 

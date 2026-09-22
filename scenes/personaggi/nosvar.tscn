@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cdxsug3qdavva"]
 
 [ext_resource type="Script" uid="uid://b3q4u4bvf8qvu" path="res://scripts/personaggi/scena_nosvar.gd" id="1_g8r1u"]
-[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/banner/Mavromonte_simmetrico.png" id="2_ilf7b"]
+[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/sfondi/Mavromonte_simmetrico.png" id="2_ilf7b"]
 [ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="3_xljrd"]
 [ext_resource type="Script" uid="uid://36ai45jnht0i" path="res://scripts/pulsanti/pulsante_generico.gd" id="4_blr00"]
 [ext_resource type="Theme" uid="uid://b5e3tqmf6am4t" path="res://themes/temi/tema_pannelli.tres" id="5_8bpal"]
@@ -70,7 +70,7 @@ theme_override_colors/font_color = Color(0.821895, 0.000123167, 6.81531e-05, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 8
 theme_override_font_sizes/font_size = 25
-text = " Nosvar"
+text = " Claudio"
 
 [node name="Linea" type="HSeparator" parent="Finestra/Griglia Verticale" unique_id=31933115]
 custom_minimum_size = Vector2(385, 0)

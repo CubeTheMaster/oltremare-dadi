@@ -196,4 +196,9 @@ func _on_difesa_pressed() -> void:
 	terminale.text += risultato["testo"] 
 	
 	# verifica schivata
-	schivata(riduzione, terminale)
+	if schivata(riduzione, terminale):
+		return
+	
+	# inserisci danni ricevuti e calcola danni subiti
+	info_danni = await inserisci_danni_ricevuti()
+	danni_subiti = danno_subito(info_danni, riduzione, terminale)

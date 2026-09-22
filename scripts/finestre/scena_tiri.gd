@@ -113,9 +113,16 @@ func _ready() -> void:
 	else :
 		$Contenitore/Testo.text = $Contenitore/Testo.text.substr(0,len($Contenitore/Testo.text)-2)
 
-# Se premi il tasto X chiudi
+# Se premi il tasto ❌ chiudi
 func _on_x_pressed() -> void:
 	queue_free()
 
+# Se premi ESC chiudi
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("indietro"):
+		get_viewport().set_input_as_handled()
+		queue_free()
+
+# Se premi la freccia indietro torna al menu
 func _on_indietro_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
+	get_tree().change_scene_to_file("res://scenes/schermate/menu.tscn")

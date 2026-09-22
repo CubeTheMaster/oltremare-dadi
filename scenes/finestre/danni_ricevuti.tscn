@@ -1,0 +1,167 @@
+[gd_scene format=3 uid="uid://cyry6buutsxwa"]
+
+[ext_resource type="Script" uid="uid://c7duu2617lra8" path="res://scripts/finestre/scena_danni_ricevuti.gd" id="1_b1b01"]
+[ext_resource type="Theme" uid="uid://b5e3tqmf6am4t" path="res://themes/temi/tema_pannelli.tres" id="2_vb8uh"]
+[ext_resource type="StyleBox" uid="uid://do3qoumtfb2ic" path="res://themes/temi/tema_finestre.tres" id="3_18xxe"]
+[ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="4_5bgg1"]
+[ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="5_xc1bs"]
+[ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="6_p4i3h"]
+[ext_resource type="Script" uid="uid://36ai45jnht0i" path="res://scripts/pulsanti/pulsante_generico.gd" id="7_m7y2r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ercrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_viotc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_di02k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5sya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7hc1"]
+
+[node name="danni_ricevuti" type="Control" unique_id=1734117664]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b1b01")
+
+[node name="Contenitore" type="PanelContainer" parent="." unique_id=1974878110]
+custom_minimum_size = Vector2(150, 80)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_vb8uh")
+theme_override_styles/panel = ExtResource("3_18xxe")
+
+[node name="Griglia H 1" type="HBoxContainer" parent="Contenitore" unique_id=21386291]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("4_5bgg1")
+theme_override_constants/separation = 10
+
+[node name="Griglia Danni Ricevuti" type="HBoxContainer" parent="Contenitore/Griglia H 1" unique_id=580788532]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("4_5bgg1")
+theme_override_constants/separation = 10
+
+[node name="Danni Ricevuti" type="Label" parent="Contenitore/Griglia H 1/Griglia Danni Ricevuti" unique_id=996926259]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+tooltip_text = "Modificatore attacchi Arma da Fuoco"
+mouse_filter = 0
+theme = ExtResource("5_xc1bs")
+theme_override_font_sizes/font_size = 20
+text = "danni ricevuti:"
+
+[node name="Valore_Danni_Ricevuti" type="SpinBox" parent="Contenitore/Griglia H 1/Griglia Danni Ricevuti" unique_id=1307865136]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+max_value = 999.0
+rounded = true
+alignment = 1
+update_on_text_changed = true
+
+[node name="Griglia Pulsanti" type="HBoxContainer" parent="Contenitore/Griglia H 1" unique_id=736757261]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("4_5bgg1")
+theme_override_constants/separation = 0
+
+[node name="CHECK" type="Button" parent="Contenitore/Griglia H 1/Griglia Pulsanti" unique_id=1709353643]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("6_p4i3h")
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 15
+text = "✔"
+flat = true
+script = ExtResource("7_m7y2r")
+
+[node name="X" type="Button" parent="Contenitore/Griglia H 1/Griglia Pulsanti" unique_id=1924187192]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("6_p4i3h")
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 15
+text = "❌"
+flat = true
+script = ExtResource("7_m7y2r")
+
+[node name="Griglia H 2" type="HBoxContainer" parent="Contenitore" unique_id=348334608]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("4_5bgg1")
+theme_override_constants/separation = 20
+
+[node name="Resistente" type="CheckBox" parent="Contenitore/Griglia H 2" unique_id=1852927653]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("5_xc1bs")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "resistente"
+
+[node name="Debole" type="CheckBox" parent="Contenitore/Griglia H 2" unique_id=701225740]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("5_xc1bs")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "debole"
+
+[node name="???" type="CheckBox" parent="Contenitore/Griglia H 2" unique_id=169043394]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("5_xc1bs")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "???"
+
+[node name="Indietro" type="Button" parent="." unique_id=566460576]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 34.0
+offset_bottom = 40.0
+theme = ExtResource("6_p4i3h")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ercrd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_viotc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_di02k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p5sya")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w7hc1")
+text = "←"
+script = ExtResource("7_m7y2r")
+
+[connection signal="mouse_entered" from="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" to="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" to="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" method="_on_mouse_exited"]
+[connection signal="pressed" from="Contenitore/Griglia H 1/Griglia Pulsanti/CHECK" to="." method="_on_check_pressed"]
+[connection signal="mouse_entered" from="Contenitore/Griglia H 1/Griglia Pulsanti/X" to="Contenitore/Griglia H 1/Griglia Pulsanti/X" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Contenitore/Griglia H 1/Griglia Pulsanti/X" to="Contenitore/Griglia H 1/Griglia Pulsanti/X" method="_on_mouse_exited"]
+[connection signal="pressed" from="Contenitore/Griglia H 1/Griglia Pulsanti/X" to="." method="_on_x_pressed"]
+[connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
+[connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c0uvgi5rk3egr"]
 
-[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/banner/Mavromonte_simmetrico.png" id="1_con2f"]
+[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/sfondi/Mavromonte_simmetrico.png" id="1_con2f"]
 [ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="2_g3eks"]
 [ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="2_mhnvy"]
 [ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="3_4ytvr"]

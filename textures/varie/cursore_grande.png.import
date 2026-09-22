@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7tnrvlmja72c"
-path="res://.godot/imported/Oltremare.png-991880362f16f38ddbaef99f61f4efda.ctex"
+uid="uid://crt81d4yt4w1w"
+path="res://.godot/imported/cursore_grande.png-5c6d9a804835b631a082bdaa11d57fd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/banner/Oltremare.png"
-dest_files=["res://.godot/imported/Oltremare.png-991880362f16f38ddbaef99f61f4efda.ctex"]
+source_file="res://textures/varie/cursore_grande.png"
+dest_files=["res://.godot/imported/cursore_grande.png-5c6d9a804835b631a082bdaa11d57fd7.ctex"]
 
 [params]
 

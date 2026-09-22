@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://wwxiwltj56gj"]
 
-[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/banner/Mavromonte_simmetrico.png" id="1_70346"]
-[ext_resource type="Script" uid="uid://ci6pebll6ivcn" path="res://scripts/scena_giocatore.gd" id="1_ly4am"]
+[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/sfondi/Mavromonte_simmetrico.png" id="1_70346"]
+[ext_resource type="Script" uid="uid://ci6pebll6ivcn" path="res://scripts/schermate/scena_giocatore.gd" id="1_ly4am"]
 [ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="3_v7laf"]
 [ext_resource type="Script" uid="uid://36ai45jnht0i" path="res://scripts/pulsanti/pulsante_generico.gd" id="4_gg7sa"]
 [ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="5_gg7sa"]

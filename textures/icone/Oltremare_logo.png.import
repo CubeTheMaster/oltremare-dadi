@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cevaahatc01f6"
-path="res://.godot/imported/Mavromonte_logo.png-da90ed72058853eaaea7c17eff344be5.ctex"
+uid="uid://d2sjubg3j4d1c"
+path="res://.godot/imported/Oltremare_logo.png-ab5aa0b9c4fb8e5608d3b875df4fcb56.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/banner/Mavromonte_logo.png"
-dest_files=["res://.godot/imported/Mavromonte_logo.png-da90ed72058853eaaea7c17eff344be5.ctex"]
+source_file="res://textures/icone/Oltremare_logo.png"
+dest_files=["res://.godot/imported/Oltremare_logo.png-ab5aa0b9c4fb8e5608d3b875df4fcb56.ctex"]
 
 [params]
 

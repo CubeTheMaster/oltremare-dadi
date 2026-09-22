@@ -120,6 +120,10 @@ func _on_difesa_pressed() -> void:
 	risultato = difesa_pesante()
 	riduzione += risultato["valore"]
 	terminale.text += risultato["testo"] + "\nRIDUZIONE:  " + str(riduzione)
+	
+	# inserisci danni ricevuti e calcola danni subiti
+	info_danni = await inserisci_danni_ricevuti()
+	danni_subiti = danno_subito(info_danni, riduzione, terminale)
 
 ## Difesa CHIUSURA DEL RICCIO (1+2 DIF, 4+2 DIF+1)
 func _on_chiusura_del_riccio_pressed() -> void:
@@ -138,5 +142,5 @@ func _on_chiusura_del_riccio_pressed() -> void:
 	riduzione += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
-	# risulsati
+	# risultati
 	terminale.text += "\nRIDUZIONE:  " + str(riduzione)

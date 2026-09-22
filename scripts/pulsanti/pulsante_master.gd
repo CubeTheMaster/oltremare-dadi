@@ -10,4 +10,4 @@ func _on_mouse_exited() -> void:
 
 # Cambia scena quando il pulsante viene premuto
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/master.tscn")
+	get_tree().change_scene_to_file("res://scenes/schermate/master.tscn")

@@ -1,7 +1,7 @@
 extends Button
 
 # Carica la scena dei tiri
-var scena_tiri: PackedScene = load("res://scenes/tiri.tscn")
+var scena_tiri: PackedScene = load("res://scenes/finestre/tiri.tscn")
 
 # Cambia colore del contorno quando il mouse entra nel pulsanate
 func _on_mouse_entered() -> void:
@@ -13,5 +13,5 @@ func _on_mouse_exited() -> void:
 
 # Aggiungi la scena dei tiri quando il pulsante viene premuto
 func _on_pressed() -> void:
-	var tiri = scena_tiri.instantiate()
-	$"../..".add_child(tiri)
+	var finestra_tiri = scena_tiri.instantiate()
+	$"../..".add_child(finestra_tiri)

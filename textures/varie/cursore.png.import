@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://27y3lah2xcp1"
-path="res://.godot/imported/Mavromonte_simmetrico.png-da7437f8b1026ed7c4b74229f88ee462.ctex"
+uid="uid://cwb2ybbvl6jbe"
+path="res://.godot/imported/cursore.png-a653d33f96c940a7811973f0e12f225d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/banner/Mavromonte_simmetrico.png"
-dest_files=["res://.godot/imported/Mavromonte_simmetrico.png-da7437f8b1026ed7c4b74229f88ee462.ctex"]
+source_file="res://textures/varie/cursore.png"
+dest_files=["res://.godot/imported/cursore.png-a653d33f96c940a7811973f0e12f225d.ctex"]
 
 [params]
 

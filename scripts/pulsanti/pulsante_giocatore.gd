@@ -10,4 +10,5 @@ func _on_mouse_exited() -> void:
 
 # Cambia scena quando il pulsante viene premuto
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/giocatore.tscn")
+	var percorso_scena_giocatore : String = "res://scenes/schermate/giocatore.tscn"
+	get_tree().change_scene_to_file(percorso_scena_giocatore)

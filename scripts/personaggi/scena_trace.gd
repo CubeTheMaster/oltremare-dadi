@@ -153,8 +153,12 @@ func _on_difesa_pressed() -> void:
 	riduzione += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
-	# risulsati
+	# risultati
 	terminale.text += "\nRIDUZIONE:  " + str(riduzione)
+	
+	# inserisci danni ricevuti e calcola danni subiti
+	info_danni = await inserisci_danni_ricevuti()
+	danni_subiti = danno_subito(info_danni, riduzione, terminale)
 
 ## Cura SALVEZZA DI MERCURIO
 func _on_mercurio_pressed() -> void:

@@ -78,3 +78,7 @@ func _on_difesa_pressed() -> void:
 	risultato = difesa_media()
 	riduzione += risultato["valore"]
 	terminale.text += risultato["testo"] + "\nRIDUZIONE:  " + str(riduzione)
+	
+	# inserisci danni ricevuti e calcola danni subiti
+	info_danni = await inserisci_danni_ricevuti()
+	danni_subiti = danno_subito(info_danni, riduzione, terminale)

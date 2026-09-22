@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dm3f2af4uadoq"]
 
-[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/banner/Mavromonte_simmetrico.png" id="1_aynem"]
-[ext_resource type="Script" uid="uid://big2olu3xtkd5" path="res://scripts/scena_master.gd" id="1_jooxx"]
+[ext_resource type="Texture2D" uid="uid://27y3lah2xcp1" path="res://textures/sfondi/Mavromonte_simmetrico.png" id="1_aynem"]
+[ext_resource type="Script" uid="uid://big2olu3xtkd5" path="res://scripts/schermate/scena_master.gd" id="1_jooxx"]
 [ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="3_q3f5g"]
 [ext_resource type="Texture2D" uid="uid://sj2fwcw8glop" path="res://textures/dadi/attacco.png" id="4_2o3k7"]
 [ext_resource type="Theme" uid="uid://cir72hsfu4bhs" path="res://themes/temi/tema_contatori.tres" id="5_4lx3a"]

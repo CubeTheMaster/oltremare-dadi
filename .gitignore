@@ -1,3 +1,7 @@
 # Godot 4+ specific ignores
 .godot/
 /android/
+
+# Executables (Windows and macOS)
+Oltremare_Dadi_*.exe
+Oltremare_Dadi_*.zip
