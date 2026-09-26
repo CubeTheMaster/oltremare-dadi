@@ -12,6 +12,11 @@ const SOMMA_DADI: Dictionary = {
 	"ATT+1 + DIF+1": N_DISARMATO["ATT+1"] + N_PESANTE["DIF+1"]
 }
 
+# ------------------------------- O G G E T T I -------------------------------
+func _ready() -> void:
+	lista_oggetti = {} # Nessun oggetto equipaggiato di base
+	aggiorna_statistiche()
+
 # -------------------------------- A Z I O N I --------------------------------
 # - Attacchi MELEE -
 ## Attacco DISARMATO
@@ -25,7 +30,13 @@ func _on_pugni_pressed() -> void:
 	# attacco DISARMATO
 	risultato = attacco_disarmato()
 	danni += risultato["valore"]
-	terminale.text += risultato["testo"] + "\nDANNI:  " + str(danni) + " Bruti"
+	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
+	# risultati
+	terminale.text += "\nDANNI:  " + str(danni) + " Bruti"
 	
 	# effetto dell'aculeo di Zanna
 	terminale.text += "\n\nAVVELENAMENTO!"
@@ -46,7 +57,13 @@ func _on_presa_pressed() -> void:
 	# attacco PRESA
 	risultato = attacco_presa(VERIFICA_SCHIVATA, FORMAT_PRESA)
 	danni += risultato["valore"]
-	terminale.text += risultato["testo"] + "\nDANNI:  " + str(danni) + " Bruti"
+	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
+	# risultati
+	terminale.text += "\nDANNI:  " + str(danni) + " Bruti"
 	
 	# effetto dell'aculeo di Zanna
 	if FORMAT_PRESA:
@@ -80,6 +97,9 @@ func _on_pugno_del_picchio_pressed() -> void:
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Sparo"
 	
@@ -103,6 +123,9 @@ func _on_vortice_velenoso_pressed() -> void:
 	risultato = tira(2, ARCANO)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Arcano"

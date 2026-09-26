@@ -1,19 +1,9 @@
-# Variabili e Funzioni utilizzate da tutti i personaggi
+## Variabili e Funzioni utilizzate da tutti i personaggi
 class_name CharacterClass
-extends Control
+extends DiceClass
 
 # ----------------------------- V A R I A B I L I -----------------------------
 ## COSTANTI
-# Dadi
-const ARCANO           = {1 : 1,  2 : 2,  3 : 3,  4 : 5,  5 : 6,  6 : 8,  "nome" : "Arcano"        }
-const ATTACCO          = {1 : 1,  2 : 1,  3 : 1,  4 : 2,  5 : 2,  6 : 3,  "nome" : "Attacco"       }
-const ATTACCO_PIU1     = {1 : 1,  2 : 2,  3 : 2,  4 : 2,  5 : 3,  6 : 4,  "nome" : "Attacco +1"    }
-const ATTACCO_ADF      = {1 : 2,  2 : 2,  3 : 3,  4 : 3,  5 : 4,  6 : 4,  "nome" : "Attacco ADF"   }
-const ATTACCO_ADF_PIU1 = {1 : 3,  2 : 3,  3 : 4,  4 : 4,  5 : 5,  6 : 6,  "nome" : "Attacco ADF +1"}
-const DIFESA           = {1 : 0,  2 : 1,  3 : 1,  4 : 1,  5 : 1,  6 : 2,  "nome" : "Difesa"        }
-const DIFESA_PIU1      = {1 : 1,  2 : 1,  3 : 2,  4 : 2,  5 : 2,  6 : 3,  "nome" : "Difesa +1"     }
-const SCHIVATA         = {1 : 0,  2 : 0,  3 : 0,  4 : 1,  5 : 1,  6 : INF,"nome" : "Schivata"      }
-
 # Difese standard
 const N_LEGGERA : Dictionary = {"DIF": 1, "SCH": 1  }
 const N_MEDIA   : Dictionary = {"DIF": 2, "DIF+1": 1}
@@ -24,8 +14,9 @@ const N_DISARMATO : Dictionary = {"ATT": 2, "ATT+1": 2}
 const N_PRESA     : Dictionary = {"ATT": 4, "ATT+1": 3}
 
 # Scene
-const SCENA_GIOCATORE      : String = "res://scenes/schermate/giocatore.tscn"
+const SCENA_GIOCATORE      : String      = "res://scenes/schermate/giocatore.tscn"
 const SCENA_DANNI_RICEVUTI : PackedScene = preload("res://scenes/finestre/danni_ricevuti.tscn")
+const SCENA_OGGETTI        : PackedScene = preload("res://scenes/finestre/oggetti.tscn")
 
 ## OUTPUT FUNZIONI 
 # Tiri
@@ -39,32 +30,18 @@ var cura      : int
 var info_danni   : Dictionary
 var danni_subiti : int
 
+# Oggetti
+var lista_oggetti : Dictionary
+
 ## MODIFICATORI
-@onready var m_AM : SpinBox = assegna_modificatore(%Valore_M)
-@onready var m_AF : SpinBox = assegna_modificatore(%Valore_F)
+@onready var m_AM : SpinBox = assegna_modificatore(get_node_or_null("%Valore_M"))
+@onready var m_AF : SpinBox = assegna_modificatore(get_node_or_null("%Valore_F"))
 
 ## CASELLA DI TESTO
 @onready var terminale : TextEdit = %Testo
 
 # ------------------------------ F U N Z I O N I ------------------------------
 ## - TIRI -
-# Generico
-## Tira dadi specificando numero e tipo
-func tira(numero: int, tipo: Dictionary, newline: bool = true) -> Dictionary:
-	var _tiri = []
-	var _valore = 0
-	var _testo = ""
-	
-	for i in range(numero):
-		_tiri.append(randi_range(1,6))
-		_valore += tipo[_tiri[i]]
-	
-	_testo += "Dadi " + tipo["nome"] + ":  " + str(_tiri)
-	if newline:
-		_testo += "\n"
-	
-	return {"tiri": _tiri, "valore": _valore, "testo": _testo}
-
 # Difese
 ## Difesa classe LEGGERA (1 DIF, 1 SCH)
 func difesa_leggera(newline: bool = true) -> Dictionary:
@@ -288,13 +265,40 @@ func danno_subito(_info_danni: Dictionary, _riduzione: int, _terminale: TextEdit
 	
 	return _danni_subiti
 
+# Oggetti
+## Aggiungi/rimuovi le statistiche degli oggetti ai modificatori del personaggio
+func aggiorna_statistiche() -> void:
+	for oggetti in lista_oggetti:
+		lista_oggetti[oggetti].aggiorna_statistiche()
+
+## Tira i dadi di ogni oggetto offensivo attivo e restituisce il valroe totale
+func usa_oggetti_offensivi() -> int:
+	var danno_bonus: int = 0
+	for oggetti in lista_oggetti:
+		if lista_oggetti[oggetti].attivo:
+			danno_bonus += lista_oggetti[oggetti].tira_danni()
+	return danno_bonus
+
 ## - INTERFACCIA -
 # Finestre
+## Apre la finestra dei danni ricevuti e attende i dati inseriti dall'utente
 func inserisci_danni_ricevuti() -> Dictionary:
 	var finestra_danni_ricevuti: Control = SCENA_DANNI_RICEVUTI.instantiate()
 	add_child(finestra_danni_ricevuti)
 	
 	return await finestra_danni_ricevuti.valori_inviati
+
+## Apre la finestra degli oggetti e aggiorna lista degli oggetti e statistiche
+func _on_pulsante_oggetti_pressed() -> void:
+	var finestra_oggetti: Control = SCENA_OGGETTI.instantiate()
+	finestra_oggetti.oggetti_personaggio = lista_oggetti
+	finestra_oggetti.m_AM                = m_AM
+	finestra_oggetti.m_AF                = m_AF
+	finestra_oggetti.terminale           = terminale
+	add_child(finestra_oggetti)
+	
+	lista_oggetti = await finestra_oggetti.oggetti_attivati
+	aggiorna_statistiche()
 
 # Scena
 ## Torna alla selezione personaggi se premi ESC

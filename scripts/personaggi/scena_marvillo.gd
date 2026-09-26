@@ -20,6 +20,11 @@ func _on_pugnale_toggled(toggled_on: bool) -> void:
 func _on_difesa_bacco_toggled(toggled_on: bool) -> void:
 	bacco = toggled_on
 
+# ------------------------------- O G G E T T I -------------------------------
+func _ready() -> void:
+	lista_oggetti = {} # Nessun oggetto equipaggiato di base
+	aggiorna_statistiche()
+
 # -------------------------------- A Z I O N I --------------------------------
 # - Attacchi MELEE -
 ## Attacco STOCCO (2 ATT, 2 ATT+1)                                      [br][br]
@@ -42,6 +47,9 @@ func _on_stocco_pressed() -> void:
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Perforanti"
 
@@ -63,6 +71,9 @@ func _on_assalto_piceno_pressed() -> void:
 	risultato = tira(5 + OMNIFORGIA, ATTACCO_PIU1)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	var danni_separati = int(ceil(danni/2.0))

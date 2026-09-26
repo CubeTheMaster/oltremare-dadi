@@ -1,4 +1,5 @@
 extends Control
+
 # ------------------------------- S E G N A L I -------------------------------
 ## Condividi i valori inseriti con la scena del personaggio
 signal valori_inviati(valori: Dictionary)

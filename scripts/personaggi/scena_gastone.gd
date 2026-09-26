@@ -15,6 +15,19 @@ func _on_colpo_preciso_toggled(toggled_on: bool) -> void:
 func _on_sovraccarico_toggled(toggled_on: bool) -> void:
 	sovraccarico = toggled_on
 
+# ------------------------------- O G G E T T I -------------------------------
+func _ready() -> void:
+	var cerchio_definitivo : ObjectClass = ObjectClass.new(m_AM, m_AF, terminale)
+	cerchio_definitivo.attivo     = true
+	cerchio_definitivo.aggiornato = false
+	cerchio_definitivo.forza      = 3
+	cerchio_definitivo.precisione = 3
+	
+	lista_oggetti = {
+		"Cerchio [Definitivo]" : cerchio_definitivo
+	}
+	aggiorna_statistiche()
+
 # -------------------------------- A Z I O N I --------------------------------
 # - Attacchi MELEE -
 ## Attacco ARTIGLI (1 ATT, 1 ATT+1)
@@ -34,6 +47,9 @@ func _on_artigli_pressed() -> void:
 	risultato = tira(1, ATTACCO_PIU1)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Taglienti/Perforanti"
@@ -62,6 +78,9 @@ func _on_chele_gemelle_pressed() -> void:
 		risultato = tira(1, ARCANO)
 		danni += risultato["valore"]
 		terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Taglienti"
@@ -98,6 +117,9 @@ func _on_fucile_pressed() -> void:
 	risultato = tira(3 + 3*int(sovraccarico), ATTACCO_PIU1)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nGITTATA min:  " + str(gittata_min)

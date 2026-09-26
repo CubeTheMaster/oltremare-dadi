@@ -8,6 +8,9 @@
 [ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="6_a3nrk"]
 [ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="6_vwp2i"]
 [ext_resource type="FontFile" uid="uid://clx5na305u8nn" path="res://themes/font/cinzel.bold.otf" id="8_vwp2i"]
+[ext_resource type="StyleBox" uid="uid://do3qoumtfb2ic" path="res://themes/temi/tema_finestre.tres" id="9_7m701"]
+[ext_resource type="Texture2D" uid="uid://4o5o27apvmru" path="res://textures/oggetti/Obj_Polvere_Rossa.png" id="10_6l8cs"]
+[ext_resource type="Texture2D" uid="uid://clac7v3mtns66" path="res://textures/oggetti/Obj_Polvere_Rossa_HOVER.png" id="11_g5n2h"]
 
 [node name="carmine" type="Control" unique_id=1347544813]
 layout_mode = 3
@@ -213,6 +216,26 @@ theme_override_colors/background_color = Color(0.10748, 0.10748, 0.10748, 1)
 theme_override_fonts/font = ExtResource("8_vwp2i")
 editable = false
 
+[node name="Oggetti" type="PanelContainer" parent="." unique_id=1915106772]
+custom_minimum_size = Vector2(70, 70)
+custom_maximum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_wbude")
+theme_override_styles/panel = ExtResource("9_7m701")
+
+[node name="Pulsante Oggetti" type="TextureButton" parent="Oggetti" unique_id=918535886]
+layout_mode = 2
+texture_normal = ExtResource("10_6l8cs")
+texture_pressed = ExtResource("10_6l8cs")
+texture_hover = ExtResource("11_g5n2h")
+stretch_mode = 5
+
 [connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
 [connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]
@@ -240,3 +263,4 @@ editable = false
 [connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" method="_on_mouse_exited"]
 [connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H3/Difesa" to="." method="_on_difesa_pressed"]
+[connection signal="pressed" from="Oggetti/Pulsante Oggetti" to="." method="_on_pulsante_oggetti_pressed"]

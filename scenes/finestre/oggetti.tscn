@@ -1,0 +1,333 @@
+[gd_scene format=3 uid="uid://ddsbx4m8i7o8p"]
+
+[ext_resource type="Script" uid="uid://d01j10uxs52hh" path="res://scripts/finestre/scena_oggetti.gd" id="1_wysic"]
+[ext_resource type="Theme" uid="uid://b5e3tqmf6am4t" path="res://themes/temi/tema_pannelli.tres" id="2_dyjkp"]
+[ext_resource type="StyleBox" uid="uid://do3qoumtfb2ic" path="res://themes/temi/tema_finestre.tres" id="3_u0g3b"]
+[ext_resource type="Texture2D" uid="uid://4o5o27apvmru" path="res://textures/oggetti/Obj_Polvere_Rossa.png" id="4_3d4q3"]
+[ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="4_nfsph"]
+[ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="5_ap7rn"]
+[ext_resource type="Texture2D" uid="uid://cf33p2c74qpre" path="res://textures/oggetti/Obj_LUltimo_Sigaro.png" id="6_ap7rn"]
+[ext_resource type="Theme" uid="uid://cobum0ciwvcn5" path="res://themes/temi/tema_pulsanti.tres" id="6_g8q8s"]
+[ext_resource type="Script" uid="uid://36ai45jnht0i" path="res://scripts/pulsanti/pulsante_generico.gd" id="7_55vb4"]
+[ext_resource type="Texture2D" uid="uid://iwk5kkd5fgb8" path="res://textures/oggetti/Obj_Barattoli.png" id="7_g8q8s"]
+[ext_resource type="FontFile" uid="uid://co0y2tm1fedx3" path="res://themes/font/EUR42.otf" id="9_55vb4"]
+[ext_resource type="Texture2D" uid="uid://ddv5xbukn8vff" path="res://textures/oggetti/D.O.Niso_Cerchio_Forza.png" id="11_55vb4"]
+[ext_resource type="Texture2D" uid="uid://c2ufhmyo3icm1" path="res://textures/oggetti/Obj_Botlcure.png" id="11_wysic"]
+[ext_resource type="Texture2D" uid="uid://bxc246fm41m85" path="res://textures/oggetti/D.O.Niso_Cerchio_Definitivo.png" id="12_wysic"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_s6mwb"]
+content_margin_left = 4.0
+content_margin_top = 0.0
+content_margin_right = 4.0
+content_margin_bottom = 0.0
+color = Color(0.31207517, 0.30182287, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aldcm"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 2.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ercrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_viotc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_di02k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p5sya"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w7hc1"]
+
+[node name="oggetti" type="Control" unique_id=1734117664]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wysic")
+
+[node name="Contenitore" type="PanelContainer" parent="." unique_id=1974878110]
+custom_minimum_size = Vector2(300, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_dyjkp")
+theme_override_styles/panel = ExtResource("3_u0g3b")
+
+[node name="Griglia V" type="VBoxContainer" parent="Contenitore" unique_id=2137885788]
+layout_mode = 2
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 0
+
+[node name="Oggetti Offensivi" type="Label" parent="Contenitore/Griglia V" unique_id=1201332780]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_ap7rn")
+theme_override_colors/font_color = Color(0.71269226, 1.2513996e-06, 4.813075e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = " Oggetti Offensivi"
+
+[node name="Griglia H 1 (danni)" type="HBoxContainer" parent="Contenitore/Griglia V" unique_id=768823518]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 10
+
+[node name="Griglia H1 V 1" type="VBoxContainer" parent="Contenitore/Griglia V/Griglia H 1 (danni)" unique_id=761584472]
+layout_mode = 2
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 0
+
+[node name="Polvere Rossa" type="TextureRect" parent="Contenitore/Griglia V/Griglia H 1 (danni)/Griglia H1 V 1" unique_id=757036936]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+tooltip_text = "-Barattolo di Polvere -
+
+Apri il barattolo e spargine il contenuto nell'aria. Fino alla fine del combattimento, ogni attacco tuo e dei personaggi direttamente adiacenti ottiene 2 Dadi Attacco +1 in più."
+texture = ExtResource("4_3d4q3")
+stretch_mode = 5
+
+[node name="Switch Polvere Rossa" type="CheckButton" parent="Contenitore/Griglia V/Griglia H 1 (danni)/Griglia H1 V 1" unique_id=2059475903]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+icon_alignment = 1
+
+[node name="Griglia H1 V 2" type="VBoxContainer" parent="Contenitore/Griglia V/Griglia H 1 (danni)" unique_id=1926137486]
+layout_mode = 2
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 0
+
+[node name="Ultimo Sigaro" type="TextureRect" parent="Contenitore/Griglia V/Griglia H 1 (danni)/Griglia H1 V 2" unique_id=1861509390]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+tooltip_text = "- Ultimo Sigaro -
+
+Consuma gratuitamente quest'oggetto per caricarti di adrenalina e ottenere un'Azione d'Attacco Bonus* e +3 Dadi Attacco +1 su tutti gli attacchi fino al termine del combattimento.
+
+*L'Azione Bonus può essere di qualsiasi tipo di Attacco, permettendo anche a un personaggio di Classe Media o Pesante di sferrare due Attacchi Incantesimo e/o a Distanza in un singolo turno."
+texture = ExtResource("6_ap7rn")
+stretch_mode = 5
+
+[node name="Switch Ultimo Sigaro" type="CheckButton" parent="Contenitore/Griglia V/Griglia H 1 (danni)/Griglia H1 V 2" unique_id=1747203636]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+icon_alignment = 1
+
+[node name="Linea 1-2" type="HSeparator" parent="Contenitore/Griglia V" unique_id=1132602200]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_s6mwb")
+
+[node name="Oggetti Curativi" type="Label" parent="Contenitore/Griglia V" unique_id=1474071107]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_ap7rn")
+theme_override_colors/font_color = Color(0.16029668, 0.5235739, 2.8878452e-07, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = " Oggetti Curativi"
+
+[node name="Griglia H 2 (cure)" type="HBoxContainer" parent="Contenitore/Griglia V" unique_id=945275917]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 20
+
+[node name="Griglia H2 V 1" type="VBoxContainer" parent="Contenitore/Griglia V/Griglia H 2 (cure)" unique_id=974591940]
+layout_mode = 2
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 0
+
+[node name="Confettura" type="TextureRect" parent="Contenitore/Griglia V/Griglia H 2 (cure)/Griglia H2 V 1" unique_id=249017137]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+tooltip_text = "- Barattoli di Confettura -
+
+Al costo di un'azione, consumando un uso di quest'oggetto, otterrai il seguente effetto:
+Tira 2 Dadi Arcano + 5, il risultato sarà il numero di PV ripristinati."
+texture = ExtResource("7_g8q8s")
+stretch_mode = 5
+
+[node name="Usa Confettura" type="Button" parent="Contenitore/Griglia V/Griglia H 2 (cure)/Griglia H2 V 1" unique_id=2039696875]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_g8q8s")
+theme_override_colors/font_color = Color(0.7204677, 0.7204674, 0.7204674, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.72156864, 0.72156864, 0.72156864, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("9_55vb4")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_aldcm")
+text = "U S A"
+
+[node name="Griglia H2 V 2" type="VBoxContainer" parent="Contenitore/Griglia V/Griglia H 2 (cure)" unique_id=575866481]
+layout_mode = 2
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 0
+
+[node name="Bottiglia di Mercurio" type="TextureRect" parent="Contenitore/Griglia V/Griglia H 2 (cure)/Griglia H2 V 2" unique_id=1104061325]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+tooltip_text = "- Bottiglia di Mercurio -
+
+Al costo di un'azione, versa il contenuto della bottiglia sulle ferite tue o di un alleato per ripristinare una quantità di PV pari a 2 Dadi Arcano + 7."
+texture = ExtResource("11_wysic")
+stretch_mode = 5
+
+[node name="Usa Bottiglia di Mercurio" type="Button" parent="Contenitore/Griglia V/Griglia H 2 (cure)/Griglia H2 V 2" unique_id=507148990]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("6_g8q8s")
+theme_override_colors/font_color = Color(0.7204677, 0.7204674, 0.7204674, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.72156864, 0.72156864, 0.72156864, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("9_55vb4")
+theme_override_font_sizes/font_size = 10
+theme_override_styles/normal = SubResource("StyleBoxFlat_aldcm")
+text = "U S A"
+
+[node name="Linea 2-3" type="HSeparator" parent="Contenitore/Griglia V" unique_id=723139558]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/separator = SubResource("StyleBoxLine_s6mwb")
+
+[node name="Talismani" type="Label" parent="Contenitore/Griglia V" unique_id=747386559]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_ap7rn")
+theme_override_colors/font_color = Color(0, 0.64705884, 0.89411765, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 25
+text = " Talismani"
+
+[node name="Griglia H 3 (talismani)" type="HBoxContainer" parent="Contenitore/Griglia V" unique_id=266758150]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 20
+
+[node name="Griglia H3 V 1" type="VBoxContainer" parent="Contenitore/Griglia V/Griglia H 3 (talismani)" unique_id=899689360]
+layout_mode = 2
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 0
+
+[node name="Cerchio [Forza]" type="TextureRect" parent="Contenitore/Griglia V/Griglia H 3 (talismani)/Griglia H3 V 1" unique_id=200042540]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+tooltip_text = "- Cerchio [Forza] -
+
+Potenzia la Forza di 6 Punti Esperienza (+2 M.AM)"
+texture = ExtResource("11_55vb4")
+stretch_mode = 5
+
+[node name="Switch Cerchio [Forza]" type="CheckButton" parent="Contenitore/Griglia V/Griglia H 3 (talismani)/Griglia H3 V 1" unique_id=1770387260]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+icon_alignment = 1
+
+[node name="Griglia H3 V 2" type="VBoxContainer" parent="Contenitore/Griglia V/Griglia H 3 (talismani)" unique_id=302463112]
+layout_mode = 2
+theme = ExtResource("4_nfsph")
+theme_override_constants/separation = 0
+
+[node name="Cerchio [Definitivo]" type="TextureRect" parent="Contenitore/Griglia V/Griglia H 3 (talismani)/Griglia H3 V 2" unique_id=15283295]
+custom_maximum_size = Vector2(100, 100)
+layout_mode = 2
+tooltip_text = "- Cerchio [Definitivo] -
+
+Potenzia le Statistiche nella seguente maniera:
+
++1 Vitalità (+3 PV, +5 PV per Rosario)
+
++1 Stamina (+1 Velocità)
+
++3 Forza (+1 M.AM)
+
++3 Precisione (+1 M.AF)
+
++2 Arcano (+2 Flusso)
+
+Inoltre permette un ulteriore potenziamento di 1 Punto Esperienza a una Statistica a
+scelta. La scelta può essere modificata in qualsiasi momento al di fuori del
+combattimento."
+texture = ExtResource("12_wysic")
+stretch_mode = 5
+
+[node name="Switch Cerchio [Definitivo]" type="CheckButton" parent="Contenitore/Griglia V/Griglia H 3 (talismani)/Griglia H3 V 2" unique_id=847431339]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+icon_alignment = 1
+
+[node name="X" type="Button" parent="Contenitore" unique_id=1924187192]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme = ExtResource("6_g8q8s")
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/font_size = 15
+text = "❌"
+flat = true
+script = ExtResource("7_55vb4")
+
+[node name="Indietro" type="Button" parent="." unique_id=566460576]
+layout_mode = 0
+offset_top = -9.0
+offset_right = 34.0
+offset_bottom = 40.0
+theme = ExtResource("6_g8q8s")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_ercrd")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_viotc")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_di02k")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_p5sya")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w7hc1")
+text = "←"
+script = ExtResource("7_55vb4")
+
+[connection signal="pressed" from="Contenitore/Griglia V/Griglia H 2 (cure)/Griglia H2 V 1/Usa Confettura" to="." method="_on_usa_confettura_pressed"]
+[connection signal="pressed" from="Contenitore/Griglia V/Griglia H 2 (cure)/Griglia H2 V 2/Usa Bottiglia di Mercurio" to="." method="_on_usa_bottiglia_di_mercurio_pressed"]
+[connection signal="mouse_entered" from="Contenitore/X" to="Contenitore/X" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Contenitore/X" to="Contenitore/X" method="_on_mouse_exited"]
+[connection signal="pressed" from="Contenitore/X" to="." method="_on_x_pressed"]
+[connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
+[connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]

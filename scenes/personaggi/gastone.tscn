@@ -8,6 +8,9 @@
 [ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="6_3ndgk"]
 [ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="7_lpi2f"]
 [ext_resource type="FontFile" uid="uid://clx5na305u8nn" path="res://themes/font/cinzel.bold.otf" id="8_qs7rw"]
+[ext_resource type="StyleBox" uid="uid://do3qoumtfb2ic" path="res://themes/temi/tema_finestre.tres" id="9_ucgs6"]
+[ext_resource type="Texture2D" uid="uid://4o5o27apvmru" path="res://textures/oggetti/Obj_Polvere_Rossa.png" id="10_08yqq"]
+[ext_resource type="Texture2D" uid="uid://clac7v3mtns66" path="res://textures/oggetti/Obj_Polvere_Rossa_HOVER.png" id="11_3ndgk"]
 
 [node name="gastone" type="Control" unique_id=808608489]
 layout_mode = 3
@@ -178,13 +181,27 @@ value = 5.0
 rounded = true
 alignment = 1
 
-[node name="Colpo Preciso" type="CheckBox" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1" unique_id=734209917]
+[node name="Griglia M AM" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1" unique_id=751460292]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_3ndgk")
+theme_override_constants/separation = 10
+
+[node name="M AM" type="Label" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1/Griglia M AM" unique_id=414192118]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+tooltip_text = "Modificatore Attacchi da Mischia"
+mouse_filter = 0
+theme = ExtResource("7_lpi2f")
+theme_override_font_sizes/font_size = 20
+text = "M. AM"
+
+[node name="Valore_M" type="SpinBox" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1/Griglia M AM" unique_id=1407799731]
 unique_name_in_owner = true
 layout_mode = 2
-theme = ExtResource("7_lpi2f")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 20
-text = "colpo preciso"
+rounded = true
+alignment = 1
 
 [node name="Griglia Opzioni H2" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Opzioni V" unique_id=815005667]
 layout_mode = 2
@@ -192,7 +209,21 @@ size_flags_horizontal = 4
 theme = ExtResource("6_3ndgk")
 theme_override_constants/separation = 20
 
-[node name="Sovraccarico" type="CheckBox" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2" unique_id=322939488]
+[node name="Colpo Preciso" type="CheckBox" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2" unique_id=734209917]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("7_lpi2f")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "colpo preciso"
+
+[node name="Griglia Opzioni H3" type="HBoxContainer" parent="Finestra/Griglia Verticale/Griglia Opzioni V" unique_id=1629177652]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("6_3ndgk")
+theme_override_constants/separation = 20
+
+[node name="Sovraccarico" type="CheckBox" parent="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H3" unique_id=322939488]
 unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("7_lpi2f")
@@ -207,6 +238,26 @@ size_flags_vertical = 3
 theme_override_colors/background_color = Color(0.10748, 0.10748, 0.10748, 1)
 theme_override_fonts/font = ExtResource("8_qs7rw")
 editable = false
+
+[node name="Oggetti" type="PanelContainer" parent="." unique_id=275170909]
+custom_minimum_size = Vector2(70, 70)
+custom_maximum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_08yqq")
+theme_override_styles/panel = ExtResource("9_ucgs6")
+
+[node name="Pulsante Oggetti" type="TextureButton" parent="Oggetti" unique_id=128715246]
+layout_mode = 2
+texture_normal = ExtResource("10_08yqq")
+texture_pressed = ExtResource("10_08yqq")
+texture_hover = ExtResource("11_3ndgk")
+stretch_mode = 5
 
 [connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
@@ -223,5 +274,6 @@ editable = false
 [connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Chele Gemelle" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Chele Gemelle" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Chele Gemelle" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Chele Gemelle" method="_on_mouse_exited"]
 [connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H2/Chele Gemelle" to="." method="_on_chele_gemelle_pressed"]
-[connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H1/Colpo Preciso" to="." method="_on_colpo_preciso_toggled"]
-[connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2/Sovraccarico" to="." method="_on_sovraccarico_toggled"]
+[connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H2/Colpo Preciso" to="." method="_on_colpo_preciso_toggled"]
+[connection signal="toggled" from="Finestra/Griglia Verticale/Griglia Opzioni V/Griglia Opzioni H3/Sovraccarico" to="." method="_on_sovraccarico_toggled"]
+[connection signal="pressed" from="Oggetti/Pulsante Oggetti" to="." method="_on_pulsante_oggetti_pressed"]

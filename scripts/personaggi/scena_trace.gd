@@ -33,6 +33,18 @@ func _on_selettore_toggled(toggled_on: bool) -> void:
 	scudo = int(!toggled_on)
 	due_mani = int(toggled_on)
 
+# ------------------------------- O G G E T T I -------------------------------
+func _ready() -> void:
+	var cerchio_forza : ObjectClass = ObjectClass.new(m_AM, m_AF, terminale)
+	cerchio_forza.attivo     = true
+	cerchio_forza.aggiornato = false
+	cerchio_forza.forza      = 6
+	
+	lista_oggetti = {
+		"Cerchio [Forza]" : cerchio_forza
+	}
+	aggiorna_statistiche()
+
 # -------------------------------- A Z I O N I --------------------------------
 # - Attacchi MELEE -
 ## Attacco SPADA (2 ATT, 1 ATT+1)                                       [br][br]
@@ -63,10 +75,17 @@ func _on_spada_pressed() -> void:
 		danni += risultato["valore"]
 		terminale.text += risultato["testo"]
 		
+		# oggetti offensivi
+		danni += usa_oggetti_offensivi()
+		
 		# risultati
 		terminale.text += "\nDANNI:  " + str(danni) + " Taglienti/Perforanti - Arcano"
 		effetto_incanalare(risultato["valore"], terminale)
 	else:
+		# oggetti offensivi
+		danni += usa_oggetti_offensivi()
+		
+		# risultati
 		terminale.text += "\nDANNI:  " + str(danni) + " Taglienti/Perforanti"
 
 ## Attacco SPADONE ARCANO (3 ATT, 5 ATT+1, 1 ARC)                       [br][br]
@@ -94,6 +113,9 @@ func _on_spadone_arcano_pressed() -> void:
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Taglienti/Perforanti - Arcano"
 	if incanalare:
@@ -117,6 +139,9 @@ func _on_zolfo_pressed() -> void:
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Fuoco - Arcano"
 	
@@ -132,6 +157,9 @@ func _on_sale_pressed() -> void:
 	risultato = tira(2, ARCANO)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Puri"

@@ -4,6 +4,11 @@ extends CharacterClass # CARMINE
 ## COSTANTI
 const GITTATA_BALESTRA = 3
 
+# ------------------------------- O G G E T T I -------------------------------
+func _ready() -> void:
+	lista_oggetti = {} # Nessun oggetto equipaggiato di base
+	aggiorna_statistiche()
+
 # -------------------------------- A Z I O N I --------------------------------
 # - Attacchi MELEE -
 ## Attacco CALCIO DELLA PISTOLA (1 ATT, 2 ATT+1)
@@ -21,6 +26,9 @@ func _on_calcio_pressed() -> void:
 	risultato = tira(2*2, ATTACCO_PIU1)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nDANNI:  " + str(danni) + " Bruti"
@@ -50,6 +58,9 @@ func _on_pistola_pressed() -> void:
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
 	# risultati
 	terminale.text += "\nGITTATA min:  " + str(int(m_AF.value))
 	terminale.text += "\nGITTATA max:  " + str(gittata)
@@ -74,6 +85,9 @@ func _on_raffica_pressed() -> void:
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
 	# risultati
 	terminale.text += "\nGITTATA min:  " + str(int(m_AF.value))
 	terminale.text += "\nGITTATA max:  " + str(gittata)
@@ -96,6 +110,9 @@ func _on_balestra_pressed() -> void:
 	risultato = tira(2, ATTACCO_PIU1)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nGITTATA:  " + str(gittata)
@@ -124,6 +141,9 @@ func _on_doppia_pistola_pressed() -> void:
 	risultato = tira(2, ATTACCO_PIU1)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nGITTATA min:  " + str(int(m_AF.value))
@@ -154,6 +174,9 @@ func _on_doppia_raffica_pressed() -> void:
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
 	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
+	
 	# risultati
 	terminale.text += "\nGITTATA min:  " + str(int(m_AF.value))
 	terminale.text += "\nGITTATA max:  " + str(gittata)
@@ -178,6 +201,9 @@ func _on_dinamite_pressed() -> void:
 	risultato = tira(5, ATTACCO_PIU1)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# risultati
 	terminale.text += "\nGITTATA min:  " + str(int(m_AF.value))

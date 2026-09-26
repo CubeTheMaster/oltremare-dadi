@@ -29,6 +29,11 @@ func _on_braccio_demoniaco_toggled(toggled_on: bool) -> void:
 	else:
 		m_AM.value -= 1
 
+# ------------------------------- O G G E T T I -------------------------------
+func _ready() -> void:
+	lista_oggetti = {} # Nessun oggetto equipaggiato di base
+	aggiorna_statistiche()
+
 # -------------------------------- A Z I O N I --------------------------------
 # - Attacchi MELEE -
 ## Attacco ROSSO ARTIGLIO (4 ATT, 3 ATT+1)
@@ -55,6 +60,9 @@ func _on_falce_pressed() -> void:
 	risultato = tira(3, ATTACCO_PIU1)
 	danni += risultato["valore"]
 	terminale.text += risultato["testo"]
+	
+	# oggetti offensivi
+	danni += usa_oggetti_offensivi()
 	
 	# se la frenesia è attiva, aggiungila al danno e incrementala
 	if frenesia:

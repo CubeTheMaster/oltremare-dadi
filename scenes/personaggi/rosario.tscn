@@ -8,6 +8,9 @@
 [ext_resource type="Theme" uid="uid://d2bwcbyldukri" path="res://themes/temi/tema_griglie.tres" id="6_prai3"]
 [ext_resource type="Theme" uid="uid://b5r8k26bk5q43" path="res://themes/temi/tema_testo.tres" id="7_2s1p5"]
 [ext_resource type="FontFile" uid="uid://clx5na305u8nn" path="res://themes/font/cinzel.bold.otf" id="8_r3b8h"]
+[ext_resource type="StyleBox" uid="uid://do3qoumtfb2ic" path="res://themes/temi/tema_finestre.tres" id="9_d04lh"]
+[ext_resource type="Texture2D" uid="uid://4o5o27apvmru" path="res://textures/oggetti/Obj_Polvere_Rossa.png" id="10_afe10"]
+[ext_resource type="Texture2D" uid="uid://clac7v3mtns66" path="res://textures/oggetti/Obj_Polvere_Rossa_HOVER.png" id="11_prai3"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hox16"]
 bg_color = Color(1, 0.43137255, 0.62352943, 0.39215687)
@@ -245,6 +248,26 @@ theme_override_colors/background_color = Color(0.10748, 0.10748, 0.10748, 1)
 theme_override_fonts/font = ExtResource("8_r3b8h")
 editable = false
 
+[node name="Oggetti" type="PanelContainer" parent="." unique_id=1139089901]
+custom_minimum_size = Vector2(70, 70)
+custom_maximum_size = Vector2(70, 70)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -70.0
+offset_bottom = 70.0
+grow_horizontal = 0
+theme = ExtResource("5_afe10")
+theme_override_styles/panel = ExtResource("9_d04lh")
+
+[node name="Pulsante Oggetti" type="TextureButton" parent="Oggetti" unique_id=749242549]
+layout_mode = 2
+texture_normal = ExtResource("10_afe10")
+texture_pressed = ExtResource("10_afe10")
+texture_hover = ExtResource("11_prai3")
+stretch_mode = 5
+
 [connection signal="mouse_entered" from="Indietro" to="Indietro" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Indietro" to="Indietro" method="_on_mouse_exited"]
 [connection signal="pressed" from="Indietro" to="." method="_on_indietro_pressed"]
@@ -266,3 +289,4 @@ editable = false
 [connection signal="mouse_entered" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Chiusura del Riccio" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Chiusura del Riccio" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Chiusura del Riccio" to="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Chiusura del Riccio" method="_on_mouse_exited"]
 [connection signal="pressed" from="Finestra/Griglia Verticale/Griglia Azioni V/Griglia Azioni H4/Chiusura del Riccio" to="." method="_on_chiusura_del_riccio_pressed"]
+[connection signal="pressed" from="Oggetti/Pulsante Oggetti" to="." method="_on_pulsante_oggetti_pressed"]

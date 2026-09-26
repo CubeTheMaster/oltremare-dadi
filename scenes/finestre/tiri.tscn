@@ -42,6 +42,7 @@ grow_vertical = 2
 theme = ExtResource("1_y2pn4")
 
 [node name="Testo" type="TextEdit" parent="Contenitore" unique_id=872344483]
+unique_name_in_owner = true
 layout_mode = 2
 theme_override_colors/background_color = Color(0.10748, 0.10748, 0.10748, 1)
 theme_override_fonts/font = ExtResource("3_jny6a")
